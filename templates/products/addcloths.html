@@ -1,0 +1,226 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+          <!-- left column -->
+          <div class="col-lg-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Product Listing (Cloths) </h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <form method="post" action="{% url 'addcloths' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="box-body">
+
+                  <div class="box box-info">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Specifications</h3>
+                      <hr>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Name</label>
+                        <input type="text" id="product" name="product" class="form-control">
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Size</label>
+                        <select class="form-control" name="prsize" id="prsize">
+                          <option value="XS">XS</option>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                          <option value="XL">XL</option>
+                          <option value="XXL">XXL</option>
+                          <option value="XXXL">XXXL</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Color</label>
+                        <select class="form-control" name="prcolor" id="prcolor">
+                          <option value="White">White</option>
+                          <option value="Black">Black</option>
+                          <option value="Red">Red</option>
+                          <option value="Yellow">Yellow</option>
+                          <option value="Blue">Blue</option>
+                          <option value="Brown">Brown</option>
+                          <option value="Beige">Beige</option>
+                          <option value="Cream">Cream</option>
+                          <option value="Dark Blue">Dark Blue</option>
+                          <option value="Dark Green">Dark Green</option>
+                          <option value="Gold">Gold</option>
+                          <option value="Grey">Grey</option>
+                          <option value="Light Blue">Light Blue</option>
+                          <option value="Light Green">Light Green</option>
+                          <option value="Silver">Silver</option>
+                          <option value="Orange">Orange</option>
+                          <option value="Purle">Purle</option>
+                          <option value="Navy Blue">Navy Blue</option>
+                          <option value="Multi Color">Multi Color</option>
+                          <option value="Maroon">Maroon</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Ocasion</label>
+                        <select class="form-control" name="whenwear" id="whenwear">
+                          <option value="Casual">Casual</option>
+                          <option value="Festive">Festive</option>
+                          <option value="Beach Wear">Beach Wear</option>
+                          <option value="Launge Wear">Launge Wear</option>
+                          <option value="Party">Party</option>
+                          <option value="Formal">Formal</option>
+                          <option value="Sports">Sports</option>
+                          <option value="Night">Night</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Fit</label>
+                        <select class="form-control" name="prfit" id="prfit">
+                          <option value="Regular">Regular</option>
+                          <option value="Slim">Slim</option>
+                          <option value="Super Slim">Super Slim</option>
+                          <option value="Loose">Loose</option>
+                          <option value="Boxy">Boxy</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Fabric</label>
+                        <select class="form-control" name="prfabric" id="prfabric">
+                          <option value="Lycra">Lycra</option>
+                          <option value="Polyster">Polyster</option>
+                          <option value="Cotton">Cotton</option>
+                          <option value="Jute Blend">Jute Blend</option>
+                          <option value="Denim">Denim</option>
+                          <option value="Nylon">Nylon</option>
+                          <option value="Khadi Silk">Khadi Silk</option>
+                          <option value="Khadi Cotton">Khadi Cotton</option>
+                          <option value="Wool">Wool</option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Reversible</label>
+                        <select class="form-control" name="prreversible" id="prreversible">
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Ideal for</label>
+                        <select class="form-control" name="prgender" id="prgender">
+                          <option value="Men">Men</option>
+                          <option value="Women">Women</option>
+                          <option value="menandwomen">Men & Women</option>
+                          <option value="Boys">Boys</option>
+                          <option value="Girls">Girls</option>
+                          <option value="Bgirl">Baby Boy</option>
+                          <option value="Bboy">Baby Girl</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Manufacturer</label>
+                        <input type="text" id="prmanufacturer" name="prmanufacturer" class="form-control">
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Packer</label>
+                        <input type="text" id="prpacker" name="prpacker" class="form-control">
+                      </div>
+                      <div class="mb-3 col-sm-12">
+                        <label class="form-label">Other Details</label>
+                        <textarea class="textarea" name="protherdetails" id="protherdetails" placeholder="" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="box box-success">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Pricing</h3>
+                      <hr>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Selling Price</label>
+                        <input type="text" name="prsellingprice" class="form-control" >
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Discount</label>
+                        <select class="form-control" name="prdiscount" id="prdiscount">
+                          <option value="10">10% and below</option>
+                          <option value="20">10% and more</option>
+                          <option value="30">20% and more</option>
+                          <option value="40">30% and more</option>
+                          <option value="50">40% and more</option>
+                          <option value="60">50% and more</option>
+                          <option value="70">60% and more</option>
+                          <option value="80">70% and more</option>
+                          <option value="90">80% and more</option>
+                          <option value="100">90% and more</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  
+                                   
+                  <div class="box box-warning">
+                    <div class="box-header with-border">
+                      <h3 class="box-title">Images</h3>
+                      <hr>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image1</label>
+                        <input type="file" name="primg1" class="form-control-file" >
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image2</label>
+                        <input type="file" name="primg2" class="form-control-file">
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image3</label>
+                        <input type="file" name="primg3" class="form-control-file" >
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image4</label>
+                        <input type="file" name="primg4" class="form-control-file">
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image5</label>
+                        <input type="file" name="primg5" class="form-control-file" >
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image6</label>
+                        <input type="file" name="primg6" class="form-control-file">
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image7</label>
+                        <input type="file" name="primg7" class="form-control-file" >
+                      </div>
+                      <div class="mb-3 col-sm-6">
+                        <label class="form-label">Image8</label>
+                        <input type="file" name="primg8" class="form-control-file">
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer ">
+                  <button type="submit" class="btn btn-primary">Save Item Details</button>
+                
+                </div>
+                  
+              </form>
+            
+            <!-- /.box -->
+  
+            
+        </div>
+        <!-- /.row -->
+        </div>
+      </section>
+      <!-- /.content -->
+    
+
+{% endblock %}

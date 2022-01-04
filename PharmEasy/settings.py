@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-038i@m1ahj&(0fg4vxia0hik_^qig_!hf!gakuackey_qsdptk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] 
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 'payments',
     # 'reports',
     # 'invoices'
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +92,7 @@ WSGI_APPLICATION = 'PharmEasy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbfatakse',
+        'NAME': 'Dbfatakse',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',

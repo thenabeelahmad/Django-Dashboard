@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from products.models import Medicine
+from .models import Medicine,ProductCloth
 import random
 
 # Create your views here.
+
+def products(request):
+    return render(request,'products/products.html')
+
 
 def additem(request):
     if request.method=='POST':
@@ -39,3 +43,32 @@ def additem(request):
 
 def addwatches(request):
     return render(request,'products/addwatches.html')
+
+def addcloths(request):
+    a=ProductCloth()
+    if request.method=='POST':
+        a.pid = f'{"PRDCLOTH-"}{chr(random.randrange(65,90))}{chr(random.randrange(65,90))}{random.randrange(9999999999999)}'
+        a.plistedby = request.user
+        a.pname = request.POST.get('product')
+        a.psize = request.POST.get('prsize')
+        a.pcolor = request.POST.get('prcolor')
+        a.pocasion = request.POST.get('whenwear')
+        a.pfit = request.POST.get('prfit')
+        a.pfabric = request.POST.get('prfabric')
+        a.preversible = request.POST.get('prreversible')
+        a.pidealfor = request.POST.get('prgender')
+        a.pmanufacturer = request.POST.get('prmanufacturer')
+        a.ppacker = request.POST.get('prpacker')
+        a.potherdetail = request.POST.get('protherdetails')
+        a.psellingprice = request.POST.get('prsellingprice')
+        a.pdiscount = request.POST.get('prdiscount')
+        a.pimg1 = request.FILES.get('primg1')
+        a.pimg2 = request.FILES.get('primg2')
+        a.pimg3 = request.FILES.get('primg3')
+        a.pimg4 = request.FILES.get('primg4')
+        a.pimg5 = request.FILES.get('primg5')
+        a.pimg6 = request.FILES.get('primg6')
+        a.pimg7 = request.FILES.get('primg7')
+        a.pimg8 = request.FILES.get('primg8')
+        a.save()
+    return render(request,'products/addcloths.html')

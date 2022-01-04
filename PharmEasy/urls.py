@@ -27,6 +27,7 @@ urlpatterns = [
     # path('orders/',include('orders.urls')),
     # path('payments/',include('payments.urls')),
     # path('invoicess/',include('invoices.urls')),
+    path('',include('users.urls')),
     
 ]
 

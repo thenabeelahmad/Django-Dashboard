@@ -1,0 +1,75 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue-gradient">
+            <div class="inner">
+              <h3>Medicines</h3>
+
+              <p>All Kind</p>
+            </div>
+            <div class="icon">
+              <i class=""></i>
+            </div>
+            <a href="{% url 'additem' %}" class="small-box-footer">Add Product <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue-gradient">
+            <div class="inner">
+              <h3>Cloths</h3>
+
+              <p>Gents & Ladies</p>
+            </div>
+            <div class="icon">
+              <i class=""></i>
+            </div>
+            <a href="{% url 'addcloths' %}" class="small-box-footer">Add Product <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue-gradient">
+            <div class="inner">
+              <h3>Mobile</h3>
+
+              <p>Accesories & Devices</p>
+            </div>
+            <div class="icon">
+              <i class=""></i>
+            </div>
+            <a href="#" class="small-box-footer">Add Product <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-blue-gradient">
+            <div class="inner">
+              <h3>Other</h3>
+
+              <p>Any Product</p>
+            </div>
+            <div class="icon">
+              <i class=""></i>
+            </div>
+            <a href="#" class="small-box-footer">Add Product <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- ================================================================================================= -->
+
+    </section>
+
+  {% endblock %}
